@@ -151,7 +151,7 @@ class OutConv(nn.Sequential):
         )
 
 
-class UNet(nn.Module):
+class RPDNet(nn.Module):
     def __init__(self,
                  num_classes: int,
                  in_channels: int = 3,
@@ -160,7 +160,7 @@ class UNet(nn.Module):
                  deploy=True,
                  use_se=False,
                  convert=False):
-        super(UNet, self).__init__()
+        super(RPDNet, self).__init__()
         self.in_channels = in_channels
         self.num_classes = num_classes
         self.bilinear = bilinear
@@ -207,3 +207,4 @@ class UNet(nn.Module):
 # reparam_y = model(x)
 # print('------------------- the difference is ------------------------')
 # print((origin_y - reparam_y).abs().sum())
+
