@@ -1,6 +1,6 @@
 import torch
 import math
-from pdc_modules.batchnorm import *
+from models.batchnorm import *
 
 
 class StemConv(nn.Module):
@@ -583,3 +583,4 @@ class SegNext(nn.Module):
 #     y = torch.randn((6, 3, 1024, 1024)).to(device)  # .to('cuda' if torch.cuda.is_available() else 'cpu')
 #     x = model.forward(y)
 #     print(x.shape)
+
