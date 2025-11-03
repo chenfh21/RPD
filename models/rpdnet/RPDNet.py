@@ -130,7 +130,6 @@ class Up(nn.Module):
 
     def forward(self, x1, x2):
         x1 = self.up(x1)
-        # [N, C, H, W] 下面几行代码的作用是保障输入图像是16的整数倍，如果不是会存在下采样向下取整后在拼接时shape不一致的问题
         diff_y = x2.size()[2] - x1.size()[2]
         diff_x = x2.size()[3] - x1.size()[3]
 
@@ -207,5 +206,6 @@ class RPDNet(nn.Module):
 # reparam_y = model(x)
 # print('------------------- the difference is ------------------------')
 # print((origin_y - reparam_y).abs().sum())
+
 
 
