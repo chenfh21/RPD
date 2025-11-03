@@ -4,9 +4,9 @@ import numpy as np
 import pytorch_lightning as pl
 from torch.utils.data import Dataset, DataLoader
 
-from pdc_datasets.augmentations_geometry import *
-from pdc_datasets.augmentations_normalize import *
-from pdc_datasets.augmentations_color import *
+from datasets.augmentations_geometry import *
+from datasets.augmentations_normalize import *
+from datasets.augmentations_color import *
 
 
 class PDC(Dataset):
@@ -251,3 +251,4 @@ class PDCModule(pl.LightningDataModule):
         loader = DataLoader(self.test_ds, batch_size=batch_size, num_workers=n_workers, shuffle=False, pin_memory=True)
 
         return loader
+
