@@ -1,7 +1,7 @@
 import torch
 from torch import nn
 import copy
-from models.RPD_Module import *
+from models.rpdnet.RPD_Module import *
 
 
 def conv_bn_act(in_channels, out_channels, kernel_size, stride, padding, groups):
@@ -207,4 +207,5 @@ class RPDNet(nn.Module):
 # reparam_y = model(x)
 # print('------------------- the difference is ------------------------')
 # print((origin_y - reparam_y).abs().sum())
+
 
