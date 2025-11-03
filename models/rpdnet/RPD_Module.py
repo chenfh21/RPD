@@ -86,7 +86,7 @@ class RPD(nn.Module):
         else:
             self.se = nn.Identity()
         self.kel_convert = 5
-        if deploy:  # 这里为了使用轻量化操作我使用的是深度卷积
+        if deploy:
             self.rep_conv = nn.Conv2d(in_channels=in_channels, out_channels=out_channels, kernel_size=self.kernel_size,
                                       stride=stride, padding=padding, groups=groups, bias=bias)
 
@@ -274,4 +274,5 @@ def RPD_model_deploy(model: torch.nn.Module, save_path=None, do_copy=True):
         save_path_convert = os.path.join(save_path, 'deploy_model.pth')
         torch.save(model.state_dict(), save_path_convert)
     return model
+
 
