@@ -1,1 +1,1 @@
-from .DeepLabV3Plus import *
+from .deeplabv3plus_model import *
