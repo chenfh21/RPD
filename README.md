@@ -6,6 +6,8 @@ Author: Fanghui Chen; Zhen Yang; Fengyuan Ren
 
 College of Information Science and Engineering, Lanzhou University, Lanzhou, China
 
+This code refers to [Phenobench baseline task- semantic segmentation](https://github.com/PRBonn/phenobench-baselines/tree/main/semantic_segmentation).
+
 # Usage
 * Dataset Prepare
   
