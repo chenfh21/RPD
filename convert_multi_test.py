@@ -21,14 +21,10 @@ def parse_args():
     parser.add_argument('--config', default='./config/config_convert.yaml',
                         help="Path to configuration file (*.yaml)")
     parser.add_argument('--ckpt_path', type=str,
-                        # default='G:\BaiduNetdiskDownload\pdc_weights.ckpt',
-                        default='/home/cfh/EDB/log_dir/lightning_logs/version_97/checkpoints/phenobench_epoch=4095_train_mIoU=0.9074.ckpt',
-                        # default='G:\BaiduNetdiskDownload\EDB\log_dir\convert_multi_testing\dilat_rpdc_weights.ckpt',
+                        default='./log_dir/.../checkpoints/XXX.ckpt',
                         help='Provide *.ckpt file to convert.')
     parser.add_argument('--deploy_model',
-                        # default='G:\BaiduNetdiskDownload\EDB\log_dir\deploy_convert_multi_testing\deploy_model.ckpt',
-                        default='/home/cfh/EDB/log_dir/deploy_convert_multi_testing/deploy_model.ckpt',
-                        # default='G:\BaiduNetdiskDownload\EDB\log_dir\deploy_convert_multi_testing\deploy_rmodel.ckpt',
+                        default='./log_dir/deploy_convert_multi_testing/deploy_model.ckpt',
                         help='Path to deploy file (*.ckpt/pth)')
 
     args = vars(parser.parse_args())
@@ -68,9 +64,7 @@ def main():
             network.load_state_dict(convert_block(ckpt_dict['state_dict'], 'pdc'), strict=False)
             ckpt_dict['state_dict'] = convert_block(ckpt_dict['state_dict'], 'pdc')
 
-            # convert_path = 'G:\BaiduNetdiskDownload\EDB\log_dir\convert_path\convert_pdc_weights.ckpt'
             convert_path = '/home/cfh/EDB/log_dir/convert_path/convert_pdc_weights.pth'
-            # convert_path = 'G:\BaiduNetdiskDownload\EDB\log_dir\deploy_convert_multi_testing\deploy_rmodel.ckpt',
 
             torch.save(ckpt_dict, convert_path)
             print('save the converted weights ...')
@@ -80,7 +74,7 @@ def main():
 
     seg_module = module.SegmentationNetwork(network,
                                             criterion,
-                                            cfg['train']['learning_rate'],  # 这里有点奇怪，既然要用训练好的权重，为何还要用这两个参数
+                                            cfg['train']['learning_rate'], 
                                             cfg['train']['weight_decay'],
                                             train_step_settings=cfg['train']['step_settings'],
                                             val_step_settings=cfg['val']['step_settings'],
@@ -108,3 +102,4 @@ def main():
 if __name__ == '__main__':
 
     main()
+
