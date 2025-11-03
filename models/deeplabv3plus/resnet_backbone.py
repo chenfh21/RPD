@@ -5,7 +5,6 @@ from typing import Optional, Callable, Type, Union, List
 
 
 def conv3x3(in_planes, out_planes, stride=1, groups=1, dilation=1) -> nn.Conv2d:
-    #  reference pytorch官网GitHub写法
     """3x3 convolution with padding"""
     return nn.Conv2d(in_planes, out_planes, kernel_size=3, stride=stride,
                      padding=dilation, groups=groups, bias=False, dilation=dilation)
@@ -16,9 +15,9 @@ def conv1x1(in_planes, out_planes, stride=1) -> nn.Conv2d:
     return nn.Conv2d(in_planes, out_planes, kernel_size=1, stride=stride, bias=False)
 
 
-class BasicBlock(nn.Module):  # ->18/34resnet的残差结构。下面的bottleneck是50/101/152的残差结构
+class BasicBlock(nn.Module): 
     # layer2，3，4，5 -> [64, 128, 256, 512]
-    expansion: int = 1  # 指定残差模块主分支的卷积核个数，因为该类用于18/34，每一个残差模块的主分支卷积核个数一致，所以设定为1
+    expansion: int = 1 
 
     def __init__(self, in_channels, out_channels, stride=1, downsample=None):
         super(BasicBlock, self).__init__()
@@ -52,7 +51,7 @@ class Bottleneck(nn.Module):
     # according to "Deep residual learning for image recognition" https://axiv.org/abs/1512.0338.
     # This variant is also known as ResNet V1.5 and improves accuracy according to
     # https: //ngc.nvidia.com/catalog/model-scripts/nvidia:resnet_50_v1_5_for_pytorch.
-    expansion: int = 4  # 这是一个常量的类属性，用于该类的所有实例共享，所以在使用时候可以self.expansion进行调用
+    expansion: int = 4 
 
     def __init__(self,
                  inplanes: int,
@@ -118,7 +117,7 @@ class ResNet(nn.Module):
 
         self.inplanes = 64
         self.dilation = 1
-        if replace_stride_with_dilation is None:  # 该参数的目的是构造膨胀卷积
+        if replace_stride_with_dilation is None:
             # each element in the tuple indicates if we should replace
             # the 2x2 stride with a dilated convolution instead
             replace_stride_with_dilation = [False, False, False]
@@ -141,8 +140,6 @@ class ResNet(nn.Module):
         self.fc = nn.Linear(512 * block.expansion, num_classes)
 
     def _make_layer(self, block: Type[Union[BasicBlock, Bottleneck]],
-                    # planes对应的是残差结构中第一个卷积核对应的卷积核个数。18/34结构中卷积核个数一样，之后的残差结构中有1：1：2的比例关系
-                    # blocks是每层残差卷积模块的个数
                     planes, blocks, stride=1, dilate=False) -> nn.Sequential:
         norm_layer = self._norm_layer
         downsample = None
@@ -214,3 +211,4 @@ def resnet101(**kwargs):
         progress(bool): If True, displays a progress bar of the download to stderr
     """
     return _resnet(Bottleneck, [3, 4, 23, 3], **kwargs)
+
