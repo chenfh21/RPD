@@ -19,9 +19,6 @@ from pdc_modules import get_backbone, get_criterion, model_multimetrics
 
 import torch
 
-torch.set_float32_matmul_precision("high")
-
-
 def parse_args() -> Dict[str, str]:
     parser = argparse.ArgumentParser()
     parser.add_argument('--export_dir', default='log_dir/', help='Path to export dir which saves logs, metrics, etc.')
@@ -202,3 +199,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+
