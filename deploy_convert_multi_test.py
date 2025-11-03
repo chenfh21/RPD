@@ -5,8 +5,8 @@ import torch.backends.cudnn
 import yaml
 from typing import Dict
 
-from pdc_modules import get_backbone, get_criterion, module, convert_block
-from pdc_datasets import get_data_module
+from modules import get_backbone, get_criterion, module, convert_block
+from datasets import get_data_module
 from callbacks import *
 import os
 
@@ -40,7 +40,6 @@ def parse_args():
                         default='/home/cfh/EDB/log_dir/lightning_logs/version_97/checkpoints/phenobench_epoch=4095_train_mIoU=0.9074.ckpt',
                         # default='G:\BaiduNetdiskDownload\EDB\log_dir\convert_path\convert_pdc_weights.ckpt',
                         help='Provide converted *.ckpt file to load.')
-    # '/home/cfh/EDB/log_dir/lightning_logs/version_97/checkpoints/phenobench_epoch=4095_train_mIoU=0.9074.ckpt'
 
     args = vars(parser.parse_args())
 
@@ -87,4 +86,5 @@ def main():
 
 
 if __name__ == '__main__':
+
     main()
