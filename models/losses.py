@@ -7,20 +7,6 @@ from torch import nn
 
 
 # ----------------------------------------------CROSS ENTROPY-------------------------------------
-# nn.functional.cross_entropy()
-
-
-# def cross_entropy(
-#     input: Tensor,
-#     target: Tensor,
-#     weight: Optional[Tensor] = None,
-#     size_average: Optional[bool] = None,
-#     ignore_index: int = -100,
-#     reduce: Optional[bool] = None,
-#     reduction: str = "mean",
-#     label_smoothing: float = 0.0,
-# ) -> Tensor:
-
 class CrossEntropy(nn.Module):
     def __init__(self, weights: Optional[List] = None):
         super(CrossEntropy, self).__init__()
@@ -243,3 +229,4 @@ def get_criterion(cfg) -> nn.Module:
         weights = cfg['train']['class_weights']
 
     return CrossEntropy(weights)
+
