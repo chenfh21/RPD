@@ -24,8 +24,7 @@ def parse_args() -> Dict[str, str]:
     parser.add_argument('--config', default='./config/config_deeplearn.yaml',
                         help="Path to configuration file (*.yaml)")
     parser.add_argument('--ckpt_path', default=None, help='Provide *.ckpt file to continue training.')
-    parser.add_argument('--resume', default=False, action='store_true')  # implies default = False
-
+    parser.add_argument('--resume', default=False, action='store_true')
     args = vars(parser.parse_args())
 
     return args
@@ -197,6 +196,7 @@ def main():
 
 if __name__ == '__main__':
     main()
+
 
 
 
