@@ -7,7 +7,6 @@ import pdb
 import time
 from typing import Dict
 
-# import git
 import yaml
 from pytorch_lightning import Trainer, seed_everything
 from pytorch_lightning.loggers import TensorBoardLogger
@@ -44,17 +43,16 @@ def load_config(path_to_config_file: str) -> Dict:
 def main():
     args = parse_args()
 
-    cfg = load_config(args['config'])  # 读取yaml文件(->Dict)
-    # cfg['git-commit'] = get_git_commit_hash()  ## 用于上传github文件
-
+    cfg = load_config(args['config']) 
+    
     if cfg.get('seed') is None:
         seed_val = int(time.time())
         cfg['seed'] = seed_val
     else:
         seed_val = cfg['seed']
-    seed_everything(seed_val)  # 设置随机种子，确保实验的可重复性
+    seed_everything(seed_val) 
 
-    datasetmodule = get_data_module(cfg)  # 封装了所有数据训练步骤
+    datasetmodule = get_data_module(cfg) 
     criterion = get_criterion(cfg)
 
     # define backbone
@@ -164,10 +162,10 @@ def main():
     config_callback = ConfigCallback(cfg)
 
     early_stopping = EarlyStopping(
-        monitor='val_loss',  # 监控验证集损失
-        patience=3,  # 连续3次检验无改善则停止
-        min_delta=0.001,  # 最小改善值，小于此值视为无改善
-        mode='min',  # 因为监控的是loss，所以用"min"模式（越小越好）
+        monitor='val_loss',  
+        patience=3,  
+        min_delta=0.001,  
+        mode='min', 
         verbose=True
     )
 
@@ -199,5 +197,6 @@ def main():
 
 if __name__ == '__main__':
     main()
+
 
 
