@@ -5,7 +5,7 @@ from torch import nn, Tensor
 from typing import Tuple, List
 from collections import OrderedDict
 import math
-from models.RPD_ops import *
+from models.rpdnet.RPD_ops import *
 
 
 def _make_divisible(ch, divisor=8, min_ch=None):
@@ -274,5 +274,6 @@ def RPD_model_deploy(model: torch.nn.Module, save_path=None, do_copy=True):
         save_path_convert = os.path.join(save_path, 'deploy_model.pth')
         torch.save(model.state_dict(), save_path_convert)
     return model
+
 
 
