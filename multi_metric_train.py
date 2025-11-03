@@ -14,8 +14,8 @@ from pytorch_lightning.loggers import TensorBoardLogger
 from pytorch_lightning.callbacks import LearningRateMonitor, ModelCheckpoint, EarlyStopping
 
 from callbacks import (ConfigCallback, PostprocessorCallback, VisualizerCallback, get_postprocessors, get_visualizers)
-from pdc_datasets import get_data_module
-from pdc_modules import get_backbone, get_criterion, model_multimetrics
+from datasets import get_data_module
+from modules import get_backbone, get_criterion, model_multimetrics
 
 import torch
 
@@ -199,4 +199,5 @@ def main():
 
 if __name__ == '__main__':
     main()
+
 
