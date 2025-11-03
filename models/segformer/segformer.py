@@ -1,7 +1,7 @@
 from functools import partial
 
-from pdc_modules.segformer.encoder import *
-from pdc_modules.segformer.decoder import *
+from models.segformer.encoder import *
+from models.segformer.decoder import *
 
 
 class SegFormer(nn.Module):
@@ -59,4 +59,5 @@ if __name__ == '__main__':
     x = model.forward(y)
     print(x.shape)
     print('seg_logits is contiguous:', x.is_contiguous())
+
 
