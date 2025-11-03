@@ -8,7 +8,7 @@ import torch
 from torch import nn, optim
 import torchmetrics
 
-from pdc_modules.losses import get_div_loss_weight, js_div_loss, gjs_div_loss, kl_div_loss
+from models.losses import get_div_loss_weight, js_div_loss, gjs_div_loss, kl_div_loss
 
 
 class SegmentationNetwork(pl.LightningModule):
@@ -20,7 +20,7 @@ class SegmentationNetwork(pl.LightningModule):
                  train_step_settings: Optional[List[str]] = None,
                  val_step_settings: Optional[List[str]] = None,
                  test_step_settings: Optional[List[str]] = None,
-                 ckpt_path=None):  # 加载骨干网络的预训练权重的检查点文件的可选路径
+                 ckpt_path=None): 
         super(SegmentationNetwork, self).__init__()
 
         self.network = network
@@ -439,6 +439,7 @@ def save_metric(metrics: torch.Tensor, path_to_dir: str, name: str) -> None:
 
     info[f'm{name}'] = round(float(metrics.mean()), 5)
 
-    fpath = os.path.join(path_to_dir, f"{name}.yaml")  # 这里会自动创建该文件
+    fpath = os.path.join(path_to_dir, f"{name}.yaml")
     with open(fpath, 'w') as ostream:
         yaml.dump(info, ostream)
+
