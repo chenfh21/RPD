@@ -3,7 +3,7 @@ from collections import OrderedDict
 from typing import Dict
 
 from torch import nn
-from src.resnet_backbone import *
+from .resnet_backbone import *
 
 
 class IntermediateLayerGetter(nn.ModuleDict):
@@ -242,3 +242,4 @@ def deeplabv3plus_resnet101(output_stride, num_classes=21, pretrained_backbone=F
     model = DeepLabV3Plus(backbone, out_planes, num_classes, low_level_planes)
 
     return model
+
