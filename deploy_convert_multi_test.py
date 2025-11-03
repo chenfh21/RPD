@@ -10,8 +10,6 @@ from datasets import get_data_module
 from callbacks import *
 import os
 
-torch.set_float32_matmul_precision("medium")
-
 
 def RPD_model_deploy(model: torch.nn.Module, ckpt_dict, save_path=None, do_copy=True):
     import copy
@@ -88,3 +86,4 @@ def main():
 if __name__ == '__main__':
 
     main()
+
