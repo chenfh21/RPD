@@ -4,7 +4,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 
 from typing import List
-from pdc_modules.batchnorm import NormLayer
+from models.batchnorm import NormLayer
 
 
 def resize(input,
@@ -123,3 +123,4 @@ class SegFormerHead(nn.Module):
 
         fused = torch.cat([_c4, _c3, _c2, _c1], dim=1).contiguous()  # 关键
         return self.linear_fuse(fused)
+
