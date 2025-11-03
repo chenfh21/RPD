@@ -6,12 +6,10 @@ import torch.backends.cudnn
 import yaml
 from typing import Dict
 
-from pdc_modules import get_backbone, get_criterion, module, convert_block
-from pdc_datasets import get_data_module
+from modules import get_backbone, get_criterion, module, convert_block
+from datasets import get_data_module
 from callbacks import *
 import os
-
-torch.set_float32_matmul_precision("medium")
 
 
 def parse_args():
@@ -108,4 +106,5 @@ def main():
 
 
 if __name__ == '__main__':
+
     main()
