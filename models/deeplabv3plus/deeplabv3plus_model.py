@@ -37,7 +37,6 @@ class IntermediateLayerGetter(nn.ModuleDict):
         orig_return_layers = return_layers
         return_layers = {str(k): str(v) for k, v in return_layers.items()}
 
-        # 重新构建backbone，将没有使用到的模块全部删掉
         layers = OrderedDict()
         for name, module in model.named_children():
             layers[name] = module
@@ -104,7 +103,7 @@ class ASPP(nn.Module):
             nn.Conv2d(len(self.convs) * out_channels, out_channels, kernel_size=1, bias=False),
             nn.BatchNorm2d(out_channels),
             nn.ReLU(inplace=True),
-            nn.Dropout(0.1)  # 有的也设置为0.5
+            nn.Dropout(0.1)
         )
 
     def forward(self, x: torch.Tensor) -> torch.Tensor:
@@ -190,7 +189,6 @@ class DeepLabV3Plus(nn.Module):
         features = self.backbone(x)
 
         x = self.classifier(features)
-        # 使用双线性插值还原回原图尺寸
         x = nn.functional.interpolate(x, size=input_shape, mode='bilinear', align_corners=False)
 
         return x
@@ -242,4 +240,5 @@ def deeplabv3plus_resnet101(output_stride, num_classes=21, pretrained_backbone=F
     model = DeepLabV3Plus(backbone, out_planes, num_classes, low_level_planes)
 
     return model
+
 
