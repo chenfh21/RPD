@@ -32,15 +32,13 @@ def get_backbone(cfg: Dict) -> nn.Module:
     if cfg['backbone']['name'] == 'fgnet':
         return FGNet(num_classes)
 
-    if cfg['backbone']['name'] == 'baseline':
-        return UNet(num_classes)
-
     if cfg['backbone']['name'] == 'RPDNet':
         deploy = cfg['backbone']['deploy']
         convert = cfg['backbone']['convert']
         return RPDNet(num_classes, deploy=deploy, convert=convert)
 
     raise ValueError('The requested backbone is not supported.')
+
 
 
 
