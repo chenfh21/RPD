@@ -53,21 +53,12 @@ class LCA(nn.Module):
         return scale * x
 
     def compute_adaptive_k(self, C):
-        """
-        计算自适应k值（严格遵循论文公式）：
-        k = 最近奇数((1 + log2(C))/2)，差值相等时取较大奇数（增强局部交互能力）
-        Args:
-            C: 输入特征通道数
-        Returns:
-            k: 1D卷积核大小（奇数）
-        """
         if C <= 1:
-            return 1  # 通道数≤1时，无跨通道交互必要，k=1避免报错
+            return 1 
         log2_C = math.log2(C)
         mid_val = (1 + log2_C) / 2
-        nearest_int = round(mid_val)  # Python银行家舍入法（边界值转偶数）
+        nearest_int = round(mid_val) 
 
-        # 转换为最近的奇数
         if nearest_int % 2 == 1:
             return nearest_int
         else:
@@ -137,7 +128,6 @@ class CFF(nn.Module):
 
         y = []
         for i, conv_i in enumerate(self.branches):
-            # 每个分支的输入 = 自身输入 + 其他3个分支的输入（跨分支交互）
             branch_out = conv_i(splits[i])
             y.append(branch_out)
 
