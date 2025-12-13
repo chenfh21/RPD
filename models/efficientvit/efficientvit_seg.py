@@ -1,4 +1,4 @@
-from pdc_modules.efficientvit.backbone import *
+from models.efficientvit.backbone import *
 
 
 class DAGBlock(nn.Module):
