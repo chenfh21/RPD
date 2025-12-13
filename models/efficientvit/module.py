@@ -3,7 +3,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-from pdc_modules.efficientvit.utils import get_same_padding, build_norm, build_act, val2tuple, val2list, resize
+from models.efficientvit.utils import get_same_padding, build_norm, build_act, val2tuple, val2list, resize
 
 
 class ConvLayer(nn.Module):
