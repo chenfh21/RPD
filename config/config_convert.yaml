@@ -2,7 +2,6 @@
 data:
   name: phenobench
   path_to_dataset: /home/cfh/DataSet/PhenoBench_v110
-#  path_to_dataset: G:\BaiduNetdiskDownload\PhenoBench_v110
   num_workers: 4
   image_normalizer:
     name: single_image_normalizer
@@ -82,4 +81,5 @@ visualizers:
     classes_to_colors: {0: [0, 0, 0], 1: [0, 255, 0], 2: [255, 0, 0]}
 postprocessors:
   arg_max_classes_postprocessor: null
+
 
