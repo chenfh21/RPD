@@ -117,11 +117,11 @@ class SegHead(DAGBlock):
 class EfficientViTSeg(nn.Module):
     def __init__(self,
                  num_classes,
-                 width_list=[8, 16, 32, 64, 128],
-                 depth_list=[1, 2, 2, 2, 2],
+                 width_list=[8, 16, 32, 64, 128], # EfficientViTSeg-B0
+                 depth_list=[1, 2, 2, 2, 2],      # EfficientViTSeg-B0
                  dim=8,
-                 in_channels_list=[128, 64, 32],
-                 stride_list=[32, 16, 8]):
+                 in_channels_list=[128, 64, 32],  # EfficientViTSeg-B0
+                 stride_list=[32, 16, 8]):        # EfficientViTSeg-B0
         super().__init__()
         self.num_classes = num_classes
 
