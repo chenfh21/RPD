@@ -1,11 +1,11 @@
 from .deeplabv3plus.modeling import deeplabv3plus_resnet50
 from .RPDNet import RPDNet
-from .erfnet import ERFNetModel
+from .ERFNet import ERFNetModel
 from .segnext import SegNext
 from .segformer import SegFormer
-from .efficientvit import EfficientViTSeg
+from .EfficientVit import EfficientViTSeg
 from .model_multimetrics import *
-from .fgnet import FGNet
+from .FGNet import FGNet
 from .losses import *
 from .RPD_ops import *
 
