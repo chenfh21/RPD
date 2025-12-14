@@ -189,23 +189,3 @@ class RPDNet(nn.Module):
 
         return self.out_conv(x)
 
-# if __name__ == '__main__':
-#     model = RPDNet(in_channels=3, num_classes=3)
-#     print(model)
-#
-#     model.eval()
-#     print('------------------- training-time model -------------')
-#     # print(model)
-#     x = torch.randn(2, 3, 512, 512)
-#     origin_y = model(x)
-#     print(origin_y.shape)
-
-# model.switch_to_deploy()
-# print('------------------- after re-param -------------')
-# print(model)
-# reparam_y = model(x)
-# print('------------------- the difference is ------------------------')
-# print((origin_y - reparam_y).abs().sum())
-
-
-
