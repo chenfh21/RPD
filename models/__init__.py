@@ -1,11 +1,11 @@
 from .deeplabv3plus.modeling import deeplabv3plus_resnet50
-from .RPDNet import RPDNet
+from .rpdnet import RPDNet
 from .ERFNet import ERFNetModel
 from .segnext import SegNext
 from .segformer import SegFormer
 from .EfficientVit import EfficientViTSeg
 from .model_multimetrics import *
-from .FGNet import FGNet
+from .fgnet import FGNet
 from .losses import *
 from .RPD_ops import *
 
@@ -38,6 +38,7 @@ def get_backbone(cfg: Dict) -> nn.Module:
         return RPDNet(num_classes, deploy=deploy, convert=convert)
 
     raise ValueError('The requested backbone is not supported.')
+
 
 
 
