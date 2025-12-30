@@ -8,6 +8,8 @@ College of Information Science and Engineering, Lanzhou University, Lanzhou, Chi
 
 This code refers to [Phenobench baseline task- semantic segmentation](https://github.com/PRBonn/phenobench-baselines/tree/main/semantic_segmentation).
 
+If you have any questions about our work, feel free to contact me via e-mail (chenfh21@lzu.edu.cn).
+
 # Usage
 * Dataset Prepare
   
@@ -36,4 +38,3 @@ This code refers to [Phenobench baseline task- semantic segmentation](https://gi
   ```
 
 Weight file downloaded [weight_download](https://pan.baidu.com/s/17pNWi-ZMOCuS3IhUgWettQ) 提取码: RPD1 
-If you have any questions about our work, feel free to contact me via e-mail (chenfh21@lzu.edu.cn).
