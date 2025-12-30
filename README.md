@@ -34,3 +34,6 @@ This code refers to [Phenobench baseline task- semantic segmentation](https://gi
   ```bash
   python deploy_convert_multi_test.py --config ./config/config_deeplab.yaml --convert_ckpt_path <path-to-ckpt> --export_dir <path-to-export-directory>
   ```
+
+Weight file downloaded [weight_download](https://pan.baidu.com/s/17pNWi-ZMOCuS3IhUgWettQ) 提取码: RPD1 
+If you have any questions about our work, feel free to contact me via e-mail (chenfh21@lzu.edu.cn).
