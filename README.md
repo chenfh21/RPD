@@ -2,13 +2,15 @@
 
 This is the code implementation for paper "RPD: Learning Efficient Crops and Weeds for Field Semantic Segmentation in Drone Images".
 
+The paper has been accepted for publication by IEEE Transactions on Geoscience and Remote Sensing (TGRS).
+
 Author: Fanghui Chen; Zhen Yang; Fengyuan Ren
 
 College of Information Science and Engineering, Lanzhou University, Lanzhou, China
 
 This code refers to [Phenobench baseline task- semantic segmentation](https://github.com/PRBonn/phenobench-baselines/tree/main/semantic_segmentation).
 
-If you have any questions about our work, feel free to contact me via e-mail (chenfh21@lzu.edu.cn).
+If you benefit from this paper or the released code for your research, please kindly cite our work. If you have any questions about our work, feel free to contact me via e-mail (chenfh21@lzu.edu.cn).
 
 # Usage
 * Dataset Prepare
