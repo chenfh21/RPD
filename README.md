@@ -4,7 +4,7 @@ This is the code implementation for paper "RPD: Learning Efficient Crops and Wee
 
 The paper has been accepted for publication by IEEE Transactions on Geoscience and Remote Sensing (TGRS).
 
-Author: Fanghui Chen; Zhen Yang; Fengyuan Ren
+Authors: Fanghui Chen; Zhen Yang; Fengyuan Ren
 
 College of Information Science and Engineering, Lanzhou University, Lanzhou, China
 
