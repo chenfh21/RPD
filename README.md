@@ -40,3 +40,14 @@ If you benefit from this paper or the released code for your research, please ki
   ```
 
 Weight file downloaded [weight_download](https://pan.baidu.com/s/17pNWi-ZMOCuS3IhUgWettQ)
+
+# Reference
+@article{11506573,
+  author={Chen, Fanghui and Yang, Zhen and Ren, Fengyuan},
+  journal={IEEE Transactions on Geoscience and Remote Sensing}, 
+  title={RPD: Learning Efficient Crops and Weeds for Field Semantic Segmentation in Drone Images}, 
+  year={2026},
+  volume={64},
+  pages={4408613-4408613},
+  doi={10.1109/TGRS.2026.3690653}
+  }
