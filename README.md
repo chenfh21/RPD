@@ -1,6 +1,6 @@
 # RPD: Learning Efficient Crops and Weeds for Field Semantic Segmentation in Drone Images
 
-This is the code implementation for paper "RPD: Learning Efficient Crops and Weeds for Field Semantic Segmentation in Drone Images".
+This is the code implementation for paper "[RPD: Learning Efficient Crops and Weeds for Field Semantic Segmentation in Drone Images](https://ieeexplore.ieee.org/abstract/document/11506573)".
 
 The paper has been accepted for publication by IEEE Transactions on Geoscience and Remote Sensing (TGRS).
 
