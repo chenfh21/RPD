@@ -42,6 +42,9 @@ If you benefit from this paper or the released code for your research, please ki
 Weight file downloaded [weight_download](https://pan.baidu.com/s/17pNWi-ZMOCuS3IhUgWettQ)
 
 # Reference
+If you find this repo useful for your research, please cite our paper:
+
+```bibtex
 @article{11506573,
   author={Chen, Fanghui and Yang, Zhen and Ren, Fengyuan},
   journal={IEEE Transactions on Geoscience and Remote Sensing}, 
